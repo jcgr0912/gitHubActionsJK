@@ -1,11 +1,13 @@
-name: hola-mundo #Nombre del workflow
-on: [push] #evento que lo activará
+name: Aprendiendo Github Actions
+run-name: Estoy aprendiendo Github Actions!!!
+on: [push]
 jobs:
-  hola-mundo: #Nombre del job
-    runs-on: ubuntu-latest #Imagen en la que correrá
-    steps: #Lista de steps del job hola-mundo
-      - name: CheckoutV3  #Nombre del 1er step
-        uses: actions/checkout@v3 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
       - name: Correr Script #Nombre del 2er step
         run: python script.py #Comando que se va ejecutar
