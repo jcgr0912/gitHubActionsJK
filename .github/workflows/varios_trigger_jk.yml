@@ -1,0 +1,33 @@
+name: varios_trigger_jk
+run-name: Estoy aprendiendo los trigger
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      alerta: 
+        description: 'Nivel'
+        required: true
+        default: medio
+        type: choice
+        options:
+          - bajo
+          - medio
+          - alto
+      tags:
+        description: 'Opcional'
+        required: true
+        type: string
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: definir variable
+      run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+    - name: correr script con variables
+      run: python script.py
