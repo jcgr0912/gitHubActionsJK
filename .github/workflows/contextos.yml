@@ -1,4 +1,4 @@
-name:JK Saludo usando variables y secretos
+name: JK Saludo usando variables y secretos
 on:
   workflow_dispatch
 env:
