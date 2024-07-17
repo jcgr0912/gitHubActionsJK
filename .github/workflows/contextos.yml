@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Saludo secretos
-        run: echo "$SALUDO, ${{ vars.NOMBRE }}. Tu contraseña es ${{ secrets.SECRETOJK }}!"
+        run: echo "JUAN $SALUDO, ${{ vars.NOMBRE }}. Tu contraseña es ${{ secrets.PELAO }}!"
